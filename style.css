@@ -2,6 +2,7 @@
     text-decoration: none;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root{
@@ -16,6 +17,13 @@
     --text-color: black;
 }
 
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
 header{
     background-color: #0B0500;
 
@@ -23,14 +31,18 @@ header{
     font-size: clamp(40px, 6vw, 80px);
     width: 100vw;
     min-width: 300px;
-    padding: 10px;
+    padding: 10px 20px;
 
     display: flex;
     align-items: center;
 
-    position: fixed;
-    top: 0px;
 }
+
+#header{
+    width: 100vw;
+    height: fit-content;
+}
+
 
 #new-book{
     background-color: var(--main-color-light);
@@ -44,7 +56,7 @@ header{
     margin-left: auto;
     margin-right: 50px;
 
-}s
+}
 
 #new-book:hover{
     opacity: 0.9;
@@ -59,9 +71,12 @@ header{
 }
 
 footer{
-    position: absolute;
-    bottom: 0px;
+    margin-top: auto;
     height: 7vh;
-    width: 100vw;
     background-color: var(--main-color-light);
+}
+
+#center-content{
+    background-color: red;
+
 }
