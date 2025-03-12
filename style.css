@@ -17,11 +17,18 @@
     --text-color: black;
 }
 
+html{
+    min-width: 300px;
+    overflow: auto;
+}
+
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    
+
+    min-width: 300px;
+    overflow: hidden;
 }
 
 header{
@@ -29,13 +36,13 @@ header{
 
     color: white;
     font-size: clamp(40px, 6vw, 80px);
-    width: 100vw;
+    width: max(300px, 100vw);
     min-width: 300px;
     padding: 10px 20px;
 
     display: flex;
     align-items: center;
-
+    min-width: 100px;
 }
 
 #header{
@@ -74,9 +81,28 @@ footer{
     margin-top: auto;
     height: 7vh;
     background-color: var(--main-color-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+
+    min-width: 300px;
 }
 
 #center-content{
-    background-color: red;
+    flex-grow: 1;
 
+    display: grid;
+    grid-template-columns: repeat(auto-fill, max(300px, min(40vw, 600px)));
+    grid-auto-rows: minmax(100px, 300px);
+    gap: 10px;
+    padding: 20px;
 }
+
+
+.book{
+    background-color: rgb(196, 196, 196);
+    border-radius: 10px;
+    box-shadow: rgb(214, 214, 214) 3px 3px 5px 1px;
+}
+
