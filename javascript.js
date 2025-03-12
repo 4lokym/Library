@@ -12,3 +12,8 @@ function addBooktoLibrary(title, author, pages, read){
     let newBook = new Book(title, author, pages, read);
     myLibrary.unshift(newBook);
 }
+
+
+const new_book_button = document.getElementById("new-book");
+
+new_book_button.addEventListener("click", () => {alert("cliccato");});

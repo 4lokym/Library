@@ -94,8 +94,8 @@ footer{
 
     display: grid;
     grid-template-columns: repeat(auto-fill, max(300px, min(40vw, 600px)));
-    grid-auto-rows: minmax(100px, 300px);
-    gap: 10px;
+    grid-auto-rows: minmax(70px, 150px);
+    gap: 15px;
     padding: 20px;
 }
 
@@ -103,6 +103,27 @@ footer{
 .book{
     background-color: rgb(196, 196, 196);
     border-radius: 10px;
-    box-shadow: rgb(214, 214, 214) 3px 3px 5px 1px;
+    box-shadow: rgb(155, 155, 155) 3px 3px 0px 2px;
+    gap: 20px;
+
+    
+
+    padding: 10px;
+
+    .book-img-plh{
+        background-color: var(--secondary-color-lightest);
+        grid-row: 1/last;
+        border-radius: 7px;
+    }
+    
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    
+    .book-info{
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+
 }
 
