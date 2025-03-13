@@ -63,3 +63,8 @@ const new_book_form = document.querySelector("dialog");
 new_book_button.addEventListener("click", () => {
     new_book_form.showModal();
 });
+
+const close_button = document.querySelector(".close-button");
+close_button.addEventListener("click", () =>{
+    new_book_form.close();
+});
