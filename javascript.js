@@ -111,7 +111,7 @@ center_content.addEventListener("click", (event) =>{
         toggled_book.toggleRead();
         
         event.target.parentNode.querySelector(".read").textContent = "Read: " + toggled_book.read ;
-        event.target.textContent = event.target.textContent === "Read" ? "Not read" : "Read";
+        event.target.textContent = toggled_book.read ? "Read" : "Not read";
     }
 });
 
@@ -145,3 +145,4 @@ function return_book_from_id(id){
     return my_book;
 }
 
+//TODO add a function that changes the read button 
