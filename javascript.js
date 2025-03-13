@@ -6,11 +6,11 @@ function Book(title, author, pages, read){
     this.id = crypto.randomUUID();
 }
 
-const myLibrary = [];
+let myLibrary = [];
 
 function addBooktoLibrary(title, author, pages, read){
     let newBook = new Book(title, author, pages, read);
-    myLibrary.unshift(newBook);
+    myLibrary.push(newBook);
 }
 
 //remember the book card structure and removes it from the html
@@ -50,10 +50,10 @@ function display_books(){
 }
 
 
-// //test
-// addBooktoLibrary("a", "t", 35, true);
-// addBooktoLibrary("b", "t", 35, true);
-// display_books();
+//test
+addBooktoLibrary("a", "t", 35, true);
+addBooktoLibrary("b", "t", 35, true);
+display_books();
 
 
 
@@ -86,10 +86,31 @@ submit_button.addEventListener("click", (event) =>{
         const pages = new_book_form[2].value;
         const read = new_book_form[3].checked ? "Yes": "No";
         addBooktoLibrary(title, author, pages, read);
-        display_book(myLibrary[0]);
+        display_book(myLibrary[myLibrary.length-1]);
         
         new_book_dialog.close();
         new_book_form.reset();
     }
 })
 
+//add the delete book card functionality
+
+const center_content = document.querySelector("#center-content");
+
+center_content.addEventListener("click", (event) =>{
+    if(event.target.id === "delete-book"){
+    event.target.parentNode.remove();
+    remove_book(event.target.parentNode.id);
+    }
+});
+
+//remove a book from library
+function remove_book(id){
+    const temp_library = [];
+    myLibrary.forEach((element)=>{
+        if(element.id !== id){
+            temp_library.push(element);
+        }
+    })
+    myLibrary = temp_library;
+}
