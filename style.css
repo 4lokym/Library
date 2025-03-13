@@ -235,4 +235,9 @@ dialog::backdrop{
         width: 20px;
         height: 20px;
     }
+    #read-toggle{
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
 }

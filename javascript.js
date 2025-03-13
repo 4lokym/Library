@@ -50,10 +50,10 @@ function display_books(){
 }
 
 
-//test
-addBooktoLibrary("a", "t", 35, true);
-addBooktoLibrary("b", "t", 35, true);
-display_books();
+// //test
+// addBooktoLibrary("a", "t", 35, true);
+// addBooktoLibrary("b", "t", 35, true);
+// display_books();
 
 
 
@@ -102,6 +102,17 @@ center_content.addEventListener("click", (event) =>{
     event.target.parentNode.remove();
     remove_book(event.target.parentNode.id);
     }
+    //toggle the read
+    else if(event.target.id === "read-toggle"){
+        const element_id = event.target.parentNode.id;
+        console.log("the element id is "+element_id)
+        let toggled_book = return_book_from_id(element_id);
+        console.log("the book is"+toggled_book);
+        toggled_book.toggleRead();
+        
+        event.target.parentNode.querySelector(".read").textContent = "Read: " + toggled_book.read ;
+        event.target.textContent = event.target.textContent === "Read" ? "Not read" : "Read";
+    }
 });
 
 //remove a book from library
@@ -114,3 +125,23 @@ function remove_book(id){
     })
     myLibrary = temp_library;
 }
+
+Book.prototype.toggleRead = function(){
+    this.read = !this.read;
+}
+//da rivedere perchè se faccio il return nell'if, non funziona
+function return_book_from_id(id){
+    let my_book;
+    myLibrary.forEach((element)=>{
+        console.log(element.id);
+        console.log(id);
+        if(element.id == id){
+            console.log(element);
+            my_book = element;
+
+            //return element;
+        }
+    })
+    return my_book;
+}
+
