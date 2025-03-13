@@ -50,10 +50,10 @@ function display_books(){
 }
 
 
-//test
-addBooktoLibrary("a", "t", 35, true);
-addBooktoLibrary("b", "t", 35, true);
-display_books();
+// //test
+// addBooktoLibrary("a", "t", 35, true);
+// addBooktoLibrary("b", "t", 35, true);
+// display_books();
 
 
 
