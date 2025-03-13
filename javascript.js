@@ -58,5 +58,8 @@ display_books();
 
 
 const new_book_button = document.getElementById("new-book");
+const new_book_form = document.querySelector("dialog");
 
-new_book_button.addEventListener("click", () => {alert("cliccato");});
+new_book_button.addEventListener("click", () => {
+    new_book_form.showModal();
+});
