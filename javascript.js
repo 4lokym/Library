@@ -58,13 +58,38 @@ display_books();
 
 
 const new_book_button = document.getElementById("new-book");
-const new_book_form = document.querySelector("dialog");
+const new_book_dialog = document.querySelector("dialog");
+
+const new_book_form = document.querySelector("#new-book-form");
 
 new_book_button.addEventListener("click", () => {
-    new_book_form.showModal();
+    new_book_dialog.showModal();
 });
 
+// add the close functionality to the close dialog button
 const close_button = document.querySelector(".close-button");
-close_button.addEventListener("click", () =>{
-    new_book_form.close();
+close_button.addEventListener("click", (event) =>{
+    new_book_dialog.close();
+    new_book_form.reset();
 });
+
+// create a new book when submit is pressed
+
+const submit_button = document.querySelector("#submit-button");
+
+submit_button.addEventListener("click", (event) =>{
+    event.preventDefault();
+
+    if(new_book_form[0].checkValidity() & new_book_form[1].checkValidity() & new_book_form.checkValidity()){
+        const title = new_book_form[0].value;
+        const author = new_book_form[1].value;
+        const pages = new_book_form[2].value;
+        const read = new_book_form[3].checked ? "Yes": "No";
+        addBooktoLibrary(title, author, pages, read);
+        display_book(myLibrary[0]);
+        
+        new_book_dialog.close();
+        new_book_form.reset();
+    }
+})
+
