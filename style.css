@@ -23,18 +23,26 @@ input::-webkit-inner-spin-button {
     --text-color: black;
 }
 
-html{
-    min-width: 300px;
-    overflow: auto;
-}
 
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 
-    min-width: 300px;
+    min-width: 380px;
     overflow: hidden;
+}
+
+.authorlink{
+    a:link{
+        color: black;
+    }
+    #myprofile{
+        font-size: 1rem;
+        background-color: white;
+        color: black;
+    }
+
 }
 
 header{
@@ -42,41 +50,36 @@ header{
 
     color: white;
     font-size: clamp(40px, 6vw, 80px);
-    width: max(300px, 100vw);
     min-width: 300px;
     padding: 10px 20px;
 
     display: flex;
     align-items: center;
-    min-width: 100px;
-}
 
-#header{
-    width: 100vw;
-    height: fit-content;
 }
 
 
-#new-book{
+.button-main-action{
     background-color: var(--main-color-light);
     border: none;
     border-radius: 10px;
     box-shadow: var(--main-color) 3px 3px 1px 2px; 
-
-    color: invert(var(--text-color));
+    color: white;
     padding: max(15px, 0.7vw) max(30px, 2vw);
     font-size: clamp(15px, 2vw, 30px);
-    margin-left: auto;
-    margin-right: min(2vw, 50px);
-
 }
 
-#new-book:hover{
-    opacity: 0.9;
+#new-book{
+    margin-left: auto;
+    margin-right: min(2vw, 50px);
+}
+
+.button-main-action:hover{
+    filter: brightness(90%);
     cursor: pointer;
 }
 
-#new-book:active{
+.button-main-action:active{
     position: relative;
     left: 2px;
     top: 2px;
@@ -117,7 +120,7 @@ footer{
     padding: 10px;
 
     .book-img-plh{
-        background-color: var(--secondary-color-lightest);
+        background-color: rgb(139, 139, 139);
         grid-row: 1/last;
         border-radius: 7px;
     }
@@ -190,7 +193,7 @@ dialog{
             height: 2rem;
             border-radius: 5px;
             border: none;
-            background-color: var(--secondary-color-light);
+            background-color: rgb(209, 209, 209);
             color: white;
             font-size: 20px;
             width: 90%;

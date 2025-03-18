@@ -78,7 +78,6 @@ close_button.addEventListener("click", (event) =>{
 const submit_button = document.querySelector("#submit-button");
 
 submit_button.addEventListener("click", (event) =>{
-    event.preventDefault();
 
     if(new_book_form[0].checkValidity() & new_book_form[1].checkValidity() & new_book_form.checkValidity()){
         const title = new_book_form[0].value;
