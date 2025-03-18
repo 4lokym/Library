@@ -147,7 +147,7 @@ dialog{
     translate: -50% -50%;
 
     width: 400px;
-    height: fit-content;
+    min-height: 300px;
     overflow: auto;
 
     border: none;
