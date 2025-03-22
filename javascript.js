@@ -1,9 +1,11 @@
-function Book(title, author, pages, read){
-    this.title = title;
-    this.author = author;
-    this.pages = pages; 
-    this.read = read;
-    this.id = crypto.randomUUID();
+class Book{
+    constructor(title, author, pages, read){
+        this.title = title;
+        this.author = author;
+        this.pages = pages; 
+        this.read = read;
+        this.id = crypto.randomUUID();
+    }
 }
 
 let myLibrary = [];
@@ -17,6 +19,8 @@ function addBooktoLibrary(title, author, pages, read){
 const book_div = document.querySelector(".book");
 book_div.remove();
 book_div.setAttribute("style", "initial");
+
+
 
 
 //produces a new book_card and displays it
