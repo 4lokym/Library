@@ -25,7 +25,6 @@ input::-webkit-inner-spin-button {
 
 
 body{
-    background-color: red;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
